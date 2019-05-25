@@ -9,11 +9,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
-                docker build -t test/docker-react -f Dockerfile.dev .
+                // docker build -t test/docker-react -f Dockerfile.dev .
             }
         }stage('Test') {
             steps {
-                docker run test/docker-react npm run test -- --coverage
+                echo 'Testing'
+
+                // docker run test/docker-react npm run test -- --coverage
             }
         }
         stage('Deploy') {
