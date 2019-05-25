@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
-                // docker build -t test/docker-react -f Dockerfile.dev .
+                docker build -t test/docker-react -f Dockerfile.dev .
             }
         }
     }
