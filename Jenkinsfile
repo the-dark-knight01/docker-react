@@ -24,12 +24,6 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            junit 'build/reports/**/*.xml'
-        }
-    }
     post {
         always {
             echo 'One way or another, I have finished'
