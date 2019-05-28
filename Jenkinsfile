@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        tools {
+            
+        }
+    }
     stages {
         stage('Build') {
             steps {
@@ -8,4 +12,12 @@ pipeline {
             }
         }
     }
+    stages {
+        stage('Test') {
+            steps {
+                echo 'Testing'
+                sh 'docker run test/docker-react npm run test -- --coverage'
+            }
+        }
+    }   
 }
